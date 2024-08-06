@@ -70,8 +70,8 @@ namespace
         // The return expression is equivalent to:
         // return std::round(float(subframesDenom * sampleOffset) / float(samplesInCurrentFrame));
         // but expressed in integer arithmetic
-        return (subframesDenom * sampleOffset * 2 + samplesInCurrentFrame) /
-               (samplesInCurrentFrame * 2);
+        return static_cast<int>((subframesDenom * sampleOffset * 2 + samplesInCurrentFrame) /
+               (samplesInCurrentFrame * 2));
     }
 }
 
